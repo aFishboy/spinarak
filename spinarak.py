@@ -11,13 +11,13 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.action_chains import ActionChains
 
 # Define your email settings as repo secrets
-sender_email = os.environ['GMAIL_SENDER']
-receiver_email = os.environ['GMAIL_RECIPIENT']
-# in case you want to send to another email
-receiver_email2 = os.environ['GMAIL_RECIPIENT_2']
-recipients = [os.environ['GMAIL_SENDER'], os.environ['GMAIL_RECIPIENT']]
-# password of the sender email
-password = os.environ['GMAIL_APP_PW'] # https://myaccount.google.com/apppasswords
+# sender_email = os.environ['GMAIL_SENDER']
+# receiver_email = os.environ['GMAIL_RECIPIENT']
+# # in case you want to send to another email
+# receiver_email2 = os.environ['GMAIL_RECIPIENT_2']
+# recipients = [os.environ['GMAIL_SENDER'], os.environ['GMAIL_RECIPIENT']]
+# # password of the sender email
+# password = os.environ['GMAIL_APP_PW'] # https://myaccount.google.com/apppasswords
 
 num_iterations = 10
 day_of_month='28'
@@ -138,7 +138,7 @@ def create_booking(day_of_month, num_of_guests, location):
                 print(day + ' ')
             filename = 'hits/pokemon-cafe-slot-found-' + date.today().strftime("%Y%m%d") + '-' + str(uuid.uuid4().hex) + '.png'
             driver.save_screenshot(filename)
-            send_email(available_slots, filename)
+            # send_email(available_slots, filename)
         else:
             print("No available slots found :(")
 
